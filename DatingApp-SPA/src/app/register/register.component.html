@@ -64,7 +64,7 @@
   || registerForm.get('confirmPassword').touched && registerForm.hasError('mismatch')
   }"
     class="form-control"  formControlName="confirmPassword" 
-    placeholder="confirmPassword Password">
+    placeholder="confirm Password">
     <div class="invalid-feedback" 
     *ngIf="registerForm.get('confirmPassword').hasError('required') && registerForm.get('confirmPassword').touched"
     >Password is required</div>

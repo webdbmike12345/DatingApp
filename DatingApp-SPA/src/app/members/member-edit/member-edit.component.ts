@@ -15,6 +15,7 @@ export class MemberEditComponent implements OnInit {
   // tslint:disable-next-line: member-access
   @ViewChild('editForm', { static: true }) editForm: NgForm;
   user: User;
+  userLastActive: string;
   photoUrl: string;
   @HostListener('window:beforeunload', ['$event'])
   unloadNotification($event: any) {
@@ -33,6 +34,8 @@ export class MemberEditComponent implements OnInit {
   ngOnInit() {
     this.route.data.subscribe((data) => {
       this.user = data['user'];
+      // this.user.lastActive = this.user.lastActive.
+      this.userLastActive = this.user.lastActive.toLocaleString();
       this.authService.currentPhotoUrl.subscribe((photoUrl) => this.photoUrl = photoUrl);
     });
   }
